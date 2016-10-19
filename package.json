@@ -4,8 +4,8 @@
   "description": "##Technologies: - React - Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    // "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
     "superagent": "^2.3.0",
+    "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.13.0"

@@ -16,11 +16,11 @@ if (process.env.ENV === 'dev') {
     stats: {
       colors: true,
       chunks: false,
-    }
-  }),
+    },
+  });
 
   app.use(middleware);
-  app.use(webpackHotMiddleware);
+  app.use(webpackHotMiddleware(compiler));
 }
 
 app.use(express.static(path.join(__dirname, '/dist')));
@@ -30,5 +30,5 @@ app.get('/', (request, response) => {
 
 const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`Listening on Port ${port}`);
+  console.log(`LISTENING on Port ${port}`);
 });
