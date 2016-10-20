@@ -7,5 +7,5 @@ CREATE TABLE members (
   first_name VARCHAR NOT NULL,
   last_name VARCHAR NOT NULL,
   email VARCHAR NOT NULL,
-  zipcode INTEGER NOT NULL,
+  zipcode INTEGER NOT NULL
 );
