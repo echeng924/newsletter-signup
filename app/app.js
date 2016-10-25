@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const memberRouter = require('./routes/memberRouter');
+const weatherRouter = require('./routes/weatherRouter');
 
 const app = express();
 
