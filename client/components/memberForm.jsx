@@ -76,13 +76,13 @@ class MemberForm extends React.Component {
             name="zipcode"
             type="text"
             value={this.state.zipcode}
-            placeholder="Enter your zip code"
+            placeholder="Zip code: where you want your weather"
             onChange={this.handleInputChange}
           />
           <input
             name="form_submit"
             type="submit"
-            value="SUBMIT!"
+            value="Submit!"
           />
         </form>
       </div>

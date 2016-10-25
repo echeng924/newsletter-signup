@@ -22,3 +22,10 @@ input {
   margin-left: 31%;
 }
 
+input[type = submit] {
+  width: 10rem;
+  padding: 5px 10px;
+  background-color: cornflowerblue;
+  margin-left: 20%;
+}
+
