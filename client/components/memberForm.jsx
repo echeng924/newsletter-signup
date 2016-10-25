@@ -50,7 +50,6 @@ class MemberForm extends React.Component {
   render() {
     return (
       <div id="signup-form">
-        A form will live here..
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
