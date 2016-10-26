@@ -11,7 +11,7 @@ class WeatherController {
                             description: weatherResponse.body.weather[0].description,
                             icon: `http://openweathermap.org/img/w/${weatherResponse.body.weather[0].icon}.png`,
                             id: weatherResponse.body.id,
-                          }
+                          };
                     });
   }
 }

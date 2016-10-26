@@ -8,12 +8,23 @@ const propTypes = {
 };
 
 class ZipCodeDisplay extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+  }
   getWeatherData(zipcode) {
     request.get(`/api/weather/${zipcode}`)
+           .then((weatherData) => {
+              this.setState({
+                data: weatherData.body,
+              });
+           });
   }
 
   render() {
-    const memberData = this.props.members.map((individualMember, idx) => {
+    const memberData = this.props.members.map((indixvidualMember, idx) => {
       // console.log(individualMember)
       return (
         <div key={idx}>
