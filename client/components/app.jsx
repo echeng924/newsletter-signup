@@ -9,21 +9,24 @@ class App extends React.Component {
     this.state = {
       members: [],
     };
+    this.httpHandleDelete = this.httpHandleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.getZipcode();
+    this.httpGetZipcode();
   }
 
-  getZipcode() {
+  httpGetZipcode() {
     request.get('/api/members')
            .then((response) => {
               let memberData = response.body;
+              console.log(memberData)
               let members = [];
               if(memberData) {
                 members = Object.keys(memberData).map((id) => {
                   const indvMemberData = memberData[id];
                   return {
+                    id: indvMemberData.id,
                     zipcode: indvMemberData.zipcode,
                   };
                 });
@@ -32,11 +35,21 @@ class App extends React.Component {
            });
   }
 
+  httpHandleDelete(id) {
+    request.del(`/api/members/${id}`)
+           .then(() => {
+            this.getZipcode();
+           });
+  }
+
   render() {
     return (
       <div>
         <MemberForm />
-        <ZipCodeDisplay members={this.state.members} />
+        <ZipCodeDisplay
+          members={this.state.members}
+          httpHandleDelete={this.httpHandleDelete}
+        />
       </div>
     );
   }

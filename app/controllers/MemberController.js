@@ -17,6 +17,12 @@ class MemberController {
     MemberDAO.create(memberData)
              .then((member) => response.status(200).json(member));
   }
+
+  static delete(request, response) {
+    MemberDAO.delete(request.params.id).then(() => {
+      response.status(204).end();
+    });
+  }
 }
 
 module.exports = MemberController;

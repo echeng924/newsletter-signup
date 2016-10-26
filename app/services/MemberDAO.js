@@ -11,6 +11,10 @@ class MemberDAO {
     return db.one(sql.create, [first_name, last_name, email, zipcode])
              .then((row) => new Member(row));
   }
+
+  static delete(id) {
+    return db.none(sql.delete, [id]);
+  }
 }
 
 module.exports = MemberDAO;
